@@ -29,7 +29,7 @@ class SampleApp extends Component {
         LeftButton(route, navigator) {
           if (route.name == "detail") {
             return (
-              <Text onPress = {() => {navigator.pop()}} style = {Style.LeftButton}>戻る</Text>
+              <Text onPress = {() => {navigator.pop()}} style = {Style.leftButton}>戻る</Text>
             )
           } else return null;
         },
