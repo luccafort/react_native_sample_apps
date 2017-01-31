@@ -1,6 +1,6 @@
 import {
   StyleSheet,
-} from 'react-native';
+} from "react-native";
 
 const Style = StyleSheet.create({
   container: {
@@ -9,11 +9,11 @@ const Style = StyleSheet.create({
     marginTop: 60,
   },
   header: {
-    backgroundColor: '#afeeee',
+    backgroundColor: "#afeeee",
     height: 50,
   },
   headerText: {
-    color: '#fffcdb',
+    color: "#fffcdb",
     fontSize: 20,
     marginTop: 5,
   },

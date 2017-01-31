@@ -1,10 +1,10 @@
 // MainPage
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
 	Text,
 	View,
-} from 'react-native';
-import Style from './../Styles/Style';
+} from "react-native";
+import Style from "./../Styles/Style";
 
 export default class MainPage extends Component {
 
@@ -14,7 +14,7 @@ export default class MainPage extends Component {
 	}
 
 	_onPress() {
-		this.props.navigator.push({name: 'detail'});
+		this.props.navigator.push({name: "detail"});
 	}
 
 	render() {

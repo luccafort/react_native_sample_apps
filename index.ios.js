@@ -1,20 +1,20 @@
 // index.ios.js
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   AppRegistry,
   Text,
   View,
   Navigator,
-} from 'react-native';
+} from "react-native";
 
-import MainPage from './App/Components/MainPage';
-import Detail from './App/Components/Detail';
-import Style from './App/Styles/Style';
+import MainPage from "./App/Components/MainPage";
+import Detail from "./App/Components/Detail";
+import Style from "./App/Styles/Style";
 
 class SampleApp extends Component {
 
   _renderScene(route, navigator) {
-    if (route.name == 'detail') {
+    if (route.name == "detail") {
       return <Detail route = {route} navigator = {navigator} />
     } else {
       return <MainPage route = {route} navigator = {navigator} />;
@@ -60,4 +60,4 @@ class SampleApp extends Component {
   }
 }
 
-AppRegistry.registerComponent('SampleApp', () => SampleApp);
+AppRegistry.registerComponent("SampleApp", () => SampleApp);
