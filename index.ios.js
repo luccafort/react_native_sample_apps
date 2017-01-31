@@ -8,12 +8,17 @@ import {
 } from 'react-native';
 
 import MainPage from './App/Components/MainPage';
+import Detail from './App/Components/Detail';
 import Style from './App/Styles/Style';
 
 class SampleApp extends Component {
 
-  _renderScene() {
-    return <MainPage />;
+  _renderScene(route, navigator) {
+    if (route.name == 'detail') {
+      return <Detail route = {route} navigator = {navigator} />
+    } else {
+      return <MainPage toute = {route} navigator = {navigator} />;
+    }
   }
 
   render() {
@@ -21,14 +26,22 @@ class SampleApp extends Component {
       <Navigator.NavigationBar
       style = {Style.header}
       routeMapper = {{
-        LeftButton() {
-          return null;
+        LeftButton(route, navigator) {
+          if (route.name == "detail") {
+            return (
+              <Text onPress = {() => {navigator.pop()}} style = {Style.LeftButton}>戻る</Text>
+            )
+          } else return null;
         },
         RightButton() {
           return null;
         },
-        Title() {
-          return <Text style = {Style.headerText}>Header</Text>
+        Title(route) {
+          if (route.name == "detail") {
+            return <Text style = {Style.headerText}>Detail</Text>
+          } else {
+            return <Text style = {Style.headerText}>Header</Text>
+          }
         }
       }}
       />

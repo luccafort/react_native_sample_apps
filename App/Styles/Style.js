@@ -16,7 +16,13 @@ const Style = StyleSheet.create({
     color: '#fffcdb',
     fontSize: 20,
     marginTop: 5,
-  }
+  },
+  leftButton: {
+    color: "#fffcdb",
+    fontSize: 6,
+    marginTop: 5,
+    marginLeft: 5,
+  },
 });
 
 module.exports = Style;
