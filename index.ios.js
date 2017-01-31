@@ -41,7 +41,7 @@ class SampleApp extends Component {
         component: MainPage,
       }}
       renderScene = {this._renderScene}
-      NavigationBar = {_navigationBar}
+      navigationBar = {_navigationBar}
       />
     );
   }
