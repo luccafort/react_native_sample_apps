@@ -17,7 +17,7 @@ class SampleApp extends Component {
     if (route.name == 'detail') {
       return <Detail route = {route} navigator = {navigator} />
     } else {
-      return <MainPage toute = {route} navigator = {navigator} />;
+      return <MainPage route = {route} navigator = {navigator} />;
     }
   }
 
@@ -54,7 +54,7 @@ class SampleApp extends Component {
         component: MainPage,
       }}
       renderScene = {this._renderScene}
-      NavigationBar = {_navigationBar}
+      navigationBar = {_navigationBar}
       />
     );
   }
