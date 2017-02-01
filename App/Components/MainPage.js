@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import {
 	Text,
 	View,
+	ScrollView,
 } from "react-native";
 import Style from "./../Styles/Style";
 import EventItem from './EventItem';
@@ -43,9 +44,9 @@ export default class MainPage extends Component {
 
 	render() {
 		return (
-			<View style = {Style.container}>
+			<ScrollView style = {Style.listViewContainer}>
 				{this._renderRow()}
-			</View>
+			</ScrollView>
 		);
 	}
 }

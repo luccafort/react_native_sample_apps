@@ -30,7 +30,8 @@ const Style = StyleSheet.create({
     padding: 10,
     borderLeftColor: "#afeeee",
     borderLeftWidth: 5,
-    marginBottom: 10,
+    marginTop: 5,
+    marginBottom: 5,
     marginLeft: 5,
     marginRight: 5,
     shadowColor: "#000",
@@ -46,7 +47,11 @@ const Style = StyleSheet.create({
   },
   itemDescription: {
     color: "rgb(83, 83, 83)",
-  }
+  },
+  listViewContainer: {
+    flex: 1,
+    marginTop: 50,
+  },
 });
 
 module.exports = Style;
