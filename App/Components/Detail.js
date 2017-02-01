@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import {
 	Text,
 	View,
+	WebView,
 } from "react-native";
 import Style from "./../Styles/Style";
 
@@ -13,11 +14,11 @@ export default class Detail extends Component {
 
 	render() {
 		return (
-			<View style = {Style.container}>
-				<Text>
-					this is DetailPage
-				</Text>
-			</View>
-		)
+			<WebView
+			style = {{height: 300, width: 200}}
+			style = {Style.listViewContainer}
+			source = {{uri:this.props.route.event_url}}
+			/>
+		);
 	}
 }
