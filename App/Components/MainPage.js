@@ -17,15 +17,28 @@ export default class MainPage extends Component {
 			eventItems: [],
 		};
 		this._renderRow = this._renderRow.bind(this);
+		this._onPressRow = this._onPressRow.bind(this);
 	}
 
 	_renderRow() {
-		var array = this.state.eventItems.map((props, index) => {
+		var array = this.state.eventItems.map((prop, index) => {
 			return (
-				<EventItem key = {props.event_id} {...props} />
-			)
+				<EventItem
+				key = {prop.event_id}
+				onPress = {this._onPressRow(prop.event_url)}
+				{...prop} />
+			);
 		});
 		return array;
+	}
+
+	_onPressRow(event_url) {
+		return () => {
+			this.props.navigator.push({
+				name: "detail",
+				event_url: event_url,
+			})
+		}
 	}
 
 	_onPress() {
