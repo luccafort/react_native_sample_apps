@@ -2,11 +2,11 @@
 import React, { Component } from "react";
 import {
   AppRegistry,
+  StyleSheet,
   Text,
   View,
   Navigator,
 } from "react-native";
-
 import MainPage from "./App/Components/MainPage";
 import Detail from "./App/Components/Detail";
 import Style from "./App/Styles/Style";
@@ -14,7 +14,7 @@ import Style from "./App/Styles/Style";
 class SampleApp extends Component {
 
   _renderScene(route, navigator) {
-    if (route.name == "detail") {
+    if (route.name === "detail") {
       return <Detail route = {route} navigator = {navigator} />
     } else {
       return <MainPage route = {route} navigator = {navigator} />;
@@ -27,7 +27,7 @@ class SampleApp extends Component {
       style = {Style.header}
       routeMapper = {{
         LeftButton(route, navigator) {
-          if (route.name == "detail") {
+          if (route.name === "detail") {
             return (
               <Text onPress = {() => {navigator.pop()}} style = {Style.leftButton}>戻る</Text>
             )
@@ -37,7 +37,7 @@ class SampleApp extends Component {
           return null;
         },
         Title(route) {
-          if (route.name == "detail") {
+          if (route.name === "detail") {
             return <Text style = {Style.headerText}>Detail</Text>
           } else {
             return <Text style = {Style.headerText}>Header</Text>
