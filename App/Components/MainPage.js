@@ -5,6 +5,7 @@ import {
 	View,
 } from "react-native";
 import Style from "./../Styles/Style";
+import EventItem from './EventItem';
 
 export default class MainPage extends Component {
 
@@ -31,11 +32,11 @@ export default class MainPage extends Component {
 	}
 
 	componentWillMount() {
-		var url = "http://connpass.com/api/v1/event";
+		var url = "https://connpass.com/api/v1/event/";
 		var req = new XMLHttpRequest();
 		req.open("GET", url);
 		req.onload = () => {
-			console.log(JSON.parse(req.responseText));
+			this.setState({eventItems: JSON.parse(req.responseText).events});
 		};
 		req.send();
 	}
