@@ -10,7 +10,20 @@ export default class MainPage extends Component {
 
 	constructor(props) {
 		super(props);
-		this._onPress = this._onPress.bind(this);
+
+		this.state = {
+			eventItems: [],
+		};
+		this._renderRow = this._renderRow.bind(this);
+	}
+
+	_renderRow() {
+		var array = this.state.eventItems.map((props, index) => {
+			return (
+				<EventItem key = {props.event_id} {...props} />
+			)
+		});
+		return array;
 	}
 
 	_onPress() {
@@ -30,9 +43,7 @@ export default class MainPage extends Component {
 	render() {
 		return (
 			<View style = {Style.container}>
-				<Text onPress = {this._onPress}>
-					this is MainPage
-				</Text>
+				{this._renderRow()}
 			</View>
 		);
 	}
